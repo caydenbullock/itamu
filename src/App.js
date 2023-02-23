@@ -1,25 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import eye from './eye.png';
+import React, { useState } from 'react';
 
-function App() {
+export function HomeHeader() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1 className='home-header'>   
+      <img src={eye} width='100' alt='eye'/>
+      ISTHISAMUG 
+      <img src={eye} width='100' alt='eye'/>
+    </h1>
   );
 }
 
-export default App;
+export function Button({text, onClick}) {
+
+  const [buttonStyle, setButtonStyle] = 
+    useState({
+      backgroundColor: 'white',
+      color: 'black',
+    });
+  const handleMouseEnter = () => {
+    setButtonStyle({
+      backgroundColor: 'black',
+      color: 'white',
+    });
+  };
+  const handleMouseLeave = () => {
+    setButtonStyle({
+      backgroundColor: 'white',
+      color: 'black',
+    });
+  };
+  return(
+    <button
+      style={buttonStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+    >
+    {text}
+    </button>
+  )
+}
+
+export function HomeNav(props){
+  return(
+  <nav className='nav'>  
+      <Button text="Closer To Home" onClick={() => props.selectPart('videogame')}/>
+      <Button text="Comics" onClick={() => props.selectPart('comics')}/>
+      <Button text="Portfolio" onClick={() => props.selectPart('portfolio')}/>
+      <Button text="About" onClick={() => props.selectPart('about')}/>
+  </nav>
+  );
+}
+
+

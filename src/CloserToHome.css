@@ -1,0 +1,22 @@
+.body-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+@media (max-width: 767px) {
+    iframe {
+      max-width: 100%;
+      display: block; 
+    }
+  }
+  
+  /* For screens larger than 768px (desktop devices) */
+  @media (min-width: 768px) {
+   iframe {
+      max-width: 800px;
+      display: block; 
+    }
+  }
+  

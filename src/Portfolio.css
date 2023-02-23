@@ -1,0 +1,23 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid img {
+  width: 33%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.grid img:hover {
+  transform: scale(1.02);
+}
+
+.grid img.enlarged {
+  z-index: 100;
+  width:100rem;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,59 @@
+.whiteText{
+    color: white;
+}
+.\.whiteText {
+    color: white;
+}
+.fadeOut{
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.fadeIn{
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+body {
+    background-color: black;
+}
+
+.comics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.comic-buttons{
+    display:flex;
+    justify-content:center;
+}
+.episode-nav {
+    display: flex;
+    justify-content:center;
+    transition: opacity 0.5s ease-in;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#back-to-top-btn {
+    /* display: none; Hide the button by default */
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #back-to-top-btn:hover {
+    background-color: #555;
+  }
