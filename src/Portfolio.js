@@ -4,9 +4,7 @@ import "./Portfolio.css";
 const images = [];
 
 for (let i = 1; i <= 19; i++) {
-  if (i === 3){
-    images.push(require(`./portfolioImages/ptf${i}.jpeg`));
-  } else if ([8,9,15,16,17,18].includes(i)) {
+  if ([8,9,15,16,17,18].includes(i)) {
     images.push(require(`./portfolioImages/ptf${i}.gif`));
   } else {
     images.push(require(`./portfolioImages/ptf${i}.png`));
