@@ -1,0 +1,16 @@
+/* For screens smaller than 768px (mobile devices) */
+@media (max-width: 767px) {
+    img {
+      max-width: 100%;
+      display: block; 
+    }
+  }
+  
+  /* For screens larger than 768px (desktop devices) */
+  @media (min-width: 768px) {
+    img {
+      max-width: 800px;
+      display: block; 
+    }
+  }
+  
