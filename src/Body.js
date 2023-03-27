@@ -15,10 +15,12 @@ export class Body extends React.Component{
             fadingIn:false,
             activeBody:'videogame',
         };
+        
+    }  
 
-    }
 
     componentDidUpdate(prevProps){
+        
         //guard clause to prevent interrupting an ongoing fade
         if (this.state.fadingIn || this.state.fadingOut) {
             return;
@@ -35,9 +37,9 @@ export class Body extends React.Component{
         if (this.state.fadingOut === true){
             this.setState({
                 fadingOut:false,
-                fadingIn:true,
                 activeBody: this.props.activeBody,
-            });
+                fadingIn:true,
+            }); 
         }
         //if its fading in, tell the state that it's all done
         if (this.state.fadingIn === true){
@@ -81,7 +83,7 @@ export class Body extends React.Component{
             default:
                 break;
         }
-        return(
+        return (
             <div 
                 className={`center ${fadingIn ? "fadeIn" : (fadingOut ? "fadeOut" : "")}`}
                 onTransitionEnd={this.handleTransitionEnd}

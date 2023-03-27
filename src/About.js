@@ -8,14 +8,15 @@ export default function About(){
         <div className='.whiteText'>
             Looking for work:
             <ul>
+                <li>C++: Unreal Engine 5 (currently developing a multiplayer game)</li>
+                <li>Blender: Low-Poly sculpting, texturing, rigging, animating</li>
                 <li>JavaScript: React, Game Maker Language</li>
-                <li>C++: Unreal Engine 5 (currently learning)</li>
-                <li>Blender (basic functionality)</li>
                 <li>Python: pandas, matplotlib, scikitlearn</li>
                 <li>Clip Studio Paint, Procreate</li>
             </ul>
 
-            Available for work related to story/character design, game development, worldbuilding, concepting, and consultation for independent developers.
+            I am available for all the teams that love what they do.
+
             <br />  
             <br />  
             isthisamug@gmail.com
@@ -23,15 +24,9 @@ export default function About(){
             <br />
             On the nature of my projects:
             <br />
-            As a child I was frequently plagued with nightmares, which remained unresolvable through conventional means.
-            Through documenting my dreams, I found it increasingly possible to recognize when I was in a dream.
-            The majority of my artistic expression is sourced from my dreams, ultimately combining creative outlet and therapeutic utility.
-           <div style={{color:'black'}}>
-            While awake, I spent the majority of my time in my mind.
-            I developed a secondary layer to the world based on a number of patterns I needed to repeat and certain behaviors I needed to uphold.
-            In a way, it was as if I was devoutly religious, for something composed of the superstitions of my childhood imagination. 
-            Luckily I grew out of this, but my childhood dreams remain one of my largest influences today.
-            </div>
+            Many forms of media are made to be consumed rapidly, like a bowl of popcorn. 
+            I have been told that what I make is a little more like a bowl of ice cream.
+            You've got to slow down to make sense of it all, as the threat of brain freeze is always there.
            <br />
 
         </div>

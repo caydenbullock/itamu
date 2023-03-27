@@ -16,19 +16,19 @@ export function Button({text, onClick}) {
 
   const [buttonStyle, setButtonStyle] = 
     useState({
-      backgroundColor: 'white',
-      color: 'black',
+      backgroundColor: 'black',
+      color: 'white',
     });
   const handleMouseEnter = () => {
     setButtonStyle({
-      backgroundColor: 'black',
-      color: 'white',
+      backgroundColor: 'white',
+      color: 'black',
     });
   };
   const handleMouseLeave = () => {
     setButtonStyle({
-      backgroundColor: 'white',
-      color: 'black',
+      backgroundColor: 'black',
+      color: 'white',
     });
   };
   return(
