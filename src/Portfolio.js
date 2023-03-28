@@ -11,8 +11,9 @@ for (let i = 1; i <= 20; i++) {
   }
 }
 
-export default function Portfolio() {
+export default function Portfolio({onLoaded}) {
   const [selectedImage, setSelectedImage] = useState(18);
+  const [loads, setLoads] = useState([]);
 
   const handleClick = (index) => {
     if (selectedImage === index) {
@@ -21,6 +22,16 @@ export default function Portfolio() {
       setSelectedImage(index);
     }
   };
+
+  const checkIfDone = (index) => {
+    console.log(index)
+    setLoads(loads.concat([index]))
+    if (loads.length === 20) {
+      onLoaded()
+    }
+  }
+
+  
 
   return (
     <div className="grid">
@@ -31,6 +42,7 @@ export default function Portfolio() {
           src={image}
           className={`image ${selectedImage === index ? "enlarged" : ""}`}
           onClick={() => handleClick(index)}
+          onLoad={() => checkIfDone(index)}
         />
       ))}
     </div>

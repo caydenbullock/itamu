@@ -13,6 +13,14 @@
     transition: opacity 0.5s;
 }
 
+.invisible{
+    opacity: 0;
+}
+
+.visible{
+    opacity: 1;
+}
+
 body {
     background-color: black;
 }

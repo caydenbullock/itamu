@@ -6,77 +6,108 @@ import CloserToHome from './CloserToHome.js';
 import Comics from './Comics.js';
 import About from './About.js';
 
+let Visibility = [
+    'FADING_IN',
+    'FADING_OUT',
+    'VISIBLE',
+    'INVISIBLE'
+]
+
+let visibilityClasses = {
+    'FADING_IN' : 'fadeIn',
+    'FADING_OUT': 'fadeOut',
+    'VISIBLE':  'visible',
+    'INVISIBLE': 'invisible'
+}
+
 
 export class Body extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            fadingOut:false,
-            fadingIn:false,
+            visibility: 'FADING_IN',
             activeBody:'videogame',
         };
         
-    }  
+
+    } 
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.state.visibility = 'VISIBLE'
+        }, .5 * 1000)
+    }
 
 
     componentDidUpdate(prevProps){
-        
         //guard clause to prevent interrupting an ongoing fade
-        if (this.state.fadingIn || this.state.fadingOut) {
+        if (['FADING_IN', 'FADING_OUT'].includes(this.state.visibility)) {
             return;
         }
         //using prevProps below can cause probs if user is rapidly
         //clicking thru navber options
         if (this.state.activeBody !== this.props.activeBody){
-            this.setState({fadingOut:true});
+            this.setState({visibility:'FADING_OUT'});
+            console.log('aswdfqewrq3ew')
         };
     };
     handleTransitionEnd = () => {
         //if its fading out, change it to fading in
         //update state.activeBody with the new props.activeBody
-        if (this.state.fadingOut === true){
-            this.setState({
-                fadingOut:false,
-                activeBody: this.props.activeBody,
-                fadingIn:true,
-            }); 
-        }
+
         //if its fading in, tell the state that it's all done
-        if (this.state.fadingIn === true){
-            this.setState({
-                fadingIn:false
-            });
+ 
+        switch(this.state.visibility) {
+            case ('FADING_OUT'): {
+                this.setState({
+                    visibility: 'INVISIBLE',
+                    activeBody: this.props.activeBody,
+                }); 
+            }
+            case ('FADING_IN'): {
+                this.setState({
+                    visibility: 'VISIBLE'
+                });
+            }
         }
         
     };
+
+    onLoaded() {
+        this.setState({
+            visibility: 'FADING_IN'
+        });
+    }
 
     renderBody(){
         //obj deconstruction to create local vars
         //based on matching var names in these objs
         const { activeBody } = this.state;
-        const { fadingOut } = this.state;
-        const { fadingIn } = this.state;
         let body;
         switch (activeBody) {
             case 'portfolio':
                 body = (
-                    <Portfolio />
+                    <Portfolio 
+                        onLoaded={this.onLoaded}/>
                 )
                 break;
             case 'about':
                 body = (
-                    <About />
+                    <About
+                        onLoaded={this.onLoaded}/>
                 )
                 break;
             case 'comics':
                 body = (
-                    <Comics />
+                    <Comics 
+                        onLoaded={this.onLoaded}/>
                 )
                 break;
             case 'videogame':
                 body = (
                 <div className='whiteText'>
-                    <CloserToHome />
+                    <CloserToHome 
+                        onLoaded={this.onLoaded}/>
                 </div>
                 )
                 break;
@@ -85,7 +116,7 @@ export class Body extends React.Component{
         }
         return (
             <div 
-                className={`center ${fadingIn ? "fadeIn" : (fadingOut ? "fadeOut" : "")}`}
+                className={`center ${visibilityClasses[this.state.visibility]}`}
                 onTransitionEnd={this.handleTransitionEnd}
             >
                 {body}
