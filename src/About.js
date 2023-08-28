@@ -21,13 +21,7 @@ export default function About(){
             <br />  
             isthisamug@gmail.com
             <br />
-            <br />
-            On the nature of my projects:
-            <br />
-            Many forms of media are made to be consumed rapidly, like a bowl of popcorn. 
-            I have been told that what I make is a little more like a bowl of ice cream.
-            You've got to slow down to make sense of it all, as the threat of brain freeze is always there.
-           <br />
+      
 
         </div>
          {/* A group of gooded people that watched my mom and me grow up.
