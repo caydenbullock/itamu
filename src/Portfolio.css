@@ -17,7 +17,19 @@
 
 .grid img.enlarged {
   z-index: 100;
-  width:100rem;
+  width: 100rem;
   object-fit: contain;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for screens with a minimum width of 769px (desktop) */
+@media screen and (min-width: 769px) {
+  .grid {
+    justify-content: center; /* Center the flex items horizontally */
+    width: 50%; /* Wrap at 50% of the page */
+  }
 }

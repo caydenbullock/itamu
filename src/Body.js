@@ -18,7 +18,6 @@ export class Body extends React.Component{
         
     }  
 
-
     componentDidUpdate(prevProps){
         
         //guard clause to prevent interrupting an ongoing fade

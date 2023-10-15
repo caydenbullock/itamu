@@ -23,16 +23,18 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="grid">
-      {images.map((image, index) => (
-        <img
-          alt={'showcase images'}
-          key={index}
-          src={image}
-          className={`image ${selectedImage === index ? "enlarged" : ""}`}
-          onClick={() => handleClick(index)}
-        />
-      ))}
+    <div className ="grid-container">
+      <div className="grid">
+        {images.map((image, index) => (
+          <img
+            alt={'showcase images'}
+            key={index}
+            src={image}
+            className={`image ${selectedImage === index ? "enlarged" : ""}`}
+            onClick={() => handleClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -46,10 +46,10 @@ export function Button({text, onClick}) {
 export function HomeNav(props){
   return(
   <nav className='nav'>  
-      <Button text="Closer To Home" onClick={() => props.selectPart('videogame')}/>
-      <Button text="Comics" onClick={() => props.selectPart('comics')}/>
-      <Button text="Portfolio" onClick={() => props.selectPart('portfolio')}/>
-      <Button text="About" onClick={() => props.selectPart('about')}/>
+      <Button href="#videogame" text="Closer To Home" onClick={() => props.selectPart('videogame')}/>
+      <Button href="#comics" text="Comics" onClick={() => props.selectPart('comics')}/>
+      <Button href="#portfolio" text="Portfolio" onClick={() => props.selectPart('portfolio')}/>
+      <Button href="#about" text="About" onClick={() => props.selectPart('about')}/>
   </nav>
   );
 }

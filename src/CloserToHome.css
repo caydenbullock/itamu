@@ -9,7 +9,9 @@
     iframe {
       max-width: 100%;
       display: block; 
-    }
+      width:100%;
+      height: auto;
+      }
   }
   
   /* For screens larger than 768px (desktop devices) */
@@ -17,6 +19,8 @@
    iframe {
       max-width: 800px;
       display: block; 
+      width:"646";
+      height:"190";
     }
   }
   
